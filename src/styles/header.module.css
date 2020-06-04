@@ -1,10 +1,10 @@
 .container {
-    display: flex;
-    justify-content: space-between;
-    align-items: baseline;
-    overflow: hidden;
-    background-color: #0F9CFC; /*primary colour*/
-    padding: 10px 10px;
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
+  overflow: hidden;
+  background-color: #0f9cfc; /*primary colour*/
+  padding: 10px 10px;
 }
 
 .containerRight {
@@ -36,5 +36,4 @@
 .containerRight a:hover {
   text-decoration: underline;
   text-decoration-color: black;
-
 }
