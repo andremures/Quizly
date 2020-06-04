@@ -1,3 +1,5 @@
+// @flow
+
 export const PRIMARY = "#0F9CFC"; // blue
 export const PRIMARY_DARK = "#0F25FC"; // dark blue
 export const PRIMARY_LIGHT = "#0FFCE5"; // light blue
