@@ -1,18 +1,22 @@
 // @flow
 import React from "react";
-import styles from "../styles/mydeckslist.module.css";
+import ListIcon from "assets/ListIcon";
+import GridIcon from "assets/GridIcon";
+import SortByAlphaIcon from "assets/SortByAlphaIcon";
+import TagIcon from "assets/TagIcon";
+import styles from "styles/mydeckslist.module.css";
 
 const DisplayToggle = () => (
   <div className={styles.toggle}>
-    <span>List</span>
-    <span>Grid</span>
+    <ListIcon style={{width: 36, padding: 2}}/>
+    <GridIcon inverted/>
   </div>
 );
 
 const SortByToggle = () => (
   <div className={styles.toggle}>
-    <span>A-Z</span>
-    <span>Tag</span>
+    <SortByAlphaIcon inverted/>
+    <TagIcon style={{width: 24, padding: 8}} />
   </div>
 );
 
