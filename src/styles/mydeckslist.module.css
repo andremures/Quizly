@@ -1,0 +1,15 @@
+.container {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(160px, 1fr));
+  grid-gap: 30px;
+  padding: 50px 20px;
+  justify-items: center;
+  margin-left: 5vw;
+  margin-right: 5vw;
+}
+
+.deckItem {
+  border: 2px solid black;
+  width: 150px;
+  height: 100px;
+}
