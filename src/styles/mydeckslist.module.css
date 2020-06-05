@@ -13,3 +13,40 @@
   width: 150px;
   height: 100px;
 }
+
+.header {
+  display: grid;
+  grid-template-columns: 100px 100px 8fr 2fr;
+  grid-gap: 30px;
+  justify-items: center;
+  align-items: center;
+  margin-left: 5vw;
+  margin-right: 5vw;
+  padding: 20px 20px 0 20px;
+}
+
+.toggle span {
+  width: 40px;
+  border: 1px solid black;
+  padding: 5px;
+}
+
+.searchbar {
+  border: 1px solid black;
+  width: 70%;
+  height: 30px;
+  justify-self: start;
+  padding-left: 10px;
+  font-size: 20px;
+  margin-left: 20px;
+}
+
+.addDeck {
+  background-color: #0ffce5;
+  width: 125px;
+  height: 35px;
+  padding: 5px;
+  font-size: 20px;
+  border: none;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}

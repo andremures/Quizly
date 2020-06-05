@@ -2,6 +2,31 @@
 import React from "react";
 import styles from "../styles/mydeckslist.module.css";
 
+const DisplayToggle = () => (
+  <div className={styles.toggle}>
+    <span>List</span>
+    <span>Grid</span>
+  </div>
+);
+
+const SortByToggle = () => (
+  <div className={styles.toggle}>
+    <span>A-Z</span>
+    <span>Tag</span>
+  </div>
+);
+
+export const MyDeckListHeader = () => {
+  return (
+    <div className={styles.header}>
+      <DisplayToggle />
+      <SortByToggle />
+      <input className={styles.searchbar}></input>
+      <button className={styles.addDeck}>+ Deck</button>
+    </div>
+  );
+};
+
 const DeckItem = ({ number }) => {
   return (
     <div className={styles.deckItem}>
