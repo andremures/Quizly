@@ -1,78 +1,8 @@
 // @flow
 import React from "react";
-import { connect } from "react-redux";
-import ListIcon from "assets/ListIcon";
-import GridIcon from "assets/GridIcon";
-import SortByAlphaIcon from "assets/SortByAlphaIcon";
-import TagIcon from "assets/TagIcon";
+import DisplayToggle from "components/DisplayToggle";
+import SortByToggle from "components/SortByToggle";
 import styles from "styles/mydeckslist.module.css";
-
-const displayToggleMapStateToProps = (state, ownProps) => ({
-  displayType: state.myDecks.display,
-});
-
-const displayToggleMapDispatchToProps = (dispatch) => ({
-  displayGrid: () => {
-    dispatch({ type: "DISPLAY_GRID" });
-  },
-  displayList: () => {
-    dispatch({ type: "DISPLAY_LIST" });
-  },
-});
-
-const DisplayToggleComponent = (props) => {
-  const displayType = props.displayType;
-  // Toggle button is inverted if selected
-  return (
-    <div className={styles.toggle}>
-      <ListIcon
-        style={{width: 36, padding: 2}}
-        inverted={displayType === "list"}
-        onClick={props.displayList}/>
-      <GridIcon
-        inverted={displayType === "grid"}
-        onClick={props.displayGrid}/>
-    </div>
-  );
-};
-
-const DisplayToggle = connect(
-  displayToggleMapStateToProps,
-  displayToggleMapDispatchToProps
-)(DisplayToggleComponent);
-
-const sortByToggleMapStateToProps = (state, ownProps) => ({
-  sortByType: state.myDecks.sortBy,
-});
-
-const sortByToggleMapDispatchToProps = (dispatch) => ({
-  sortByAlphanum: () => {
-    dispatch({ type: "SORT_ALPHANUM" });
-  },
-  sortByTag: () => {
-    dispatch({ type: "SORT_TAG" });
-  },
-});
-
-const SortByToggleComponent = (props) => {
-  const sortByType = props.sortByType;
-  return (
-    <div className={styles.toggle}>
-      <SortByAlphaIcon
-        inverted={sortByType === "alphanum"}
-        onClick={props.sortByAlphanum}/>
-      <TagIcon
-        style={{width: 24, padding: 8}}
-        inverted={sortByType === "tag"}
-          onClick={props.sortByTag}/>
-    </div>
-  );
-};
-
-const SortByToggle = connect(
-  sortByToggleMapStateToProps,
-  sortByToggleMapDispatchToProps,
-)(SortByToggleComponent);
 
 export const MyDeckListHeader = () => {
   return (
