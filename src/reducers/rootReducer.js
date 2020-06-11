@@ -8,7 +8,7 @@ const initialState = {
   },
   myDecks: {
     display: "list",
-    sortBy: "alphanum",
+    sortBy: "tag",
   },
 };
 
