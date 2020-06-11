@@ -1,8 +1,8 @@
 // @flow
 import React from "react";
 import styles from "./App.css";
-import Header from "./components/Header.js";
-import MyDeckList, { MyDeckListHeader } from "./components/MyDeckList.js";
+import Header from "./components/Header";
+import MyDeckList, { MyDeckListHeader } from "./components/MyDeckList";
 
 function App() {
   return (

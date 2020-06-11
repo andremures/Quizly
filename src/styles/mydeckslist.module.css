@@ -48,8 +48,8 @@
 
 .addDeck {
   background-color: #0ffce5;
-  width: 135px;
-  padding: 8px 5px;
+  width: 125px;
+  padding: 2px 5px;
   font-size: 23px;
   border: none;
   border-radius: 5px;
@@ -58,6 +58,6 @@
 .addDeck:hover {
   background-color: white;
   color: #0ffce5;
-  padding: 6px 3px;
+  padding: 0 3px;
   border: 2px solid #0ffce5;
 }

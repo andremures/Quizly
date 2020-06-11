@@ -1,17 +1,45 @@
 // @flow
 import React from "react";
+import { connect } from "react-redux";
 import ListIcon from "assets/ListIcon";
 import GridIcon from "assets/GridIcon";
 import SortByAlphaIcon from "assets/SortByAlphaIcon";
 import TagIcon from "assets/TagIcon";
 import styles from "styles/mydeckslist.module.css";
 
-const DisplayToggle = () => (
-  <div className={styles.toggle}>
-    <ListIcon style={{width: 36, padding: 2}}/>
-    <GridIcon inverted/>
-  </div>
-);
+const displayToggleMapStateToProps = (state, ownProps) => ({
+  displayType: state.myDecks.display,
+});
+
+const displayToggleMapDispatchToProps = (dispatch) => ({
+  displayGrid: () => {
+    dispatch({ type: "DISPLAY_GRID" });
+  },
+  displayList: () => {
+    dispatch({ type: "DISPLAY_LIST" });
+  },
+});
+
+const DisplayToggleComponent = (props) => {
+  const displayType = props.displayType;
+  // Toggle button is inverted if selected
+  return (
+    <div className={styles.toggle}>
+      <ListIcon
+        style={{width: 36, padding: 2}}
+        inverted={displayType === "list"}
+        onClick={props.displayList}/>
+      <GridIcon
+        inverted={displayType === "grid"}
+        onClick={props.displayGrid}/>
+    </div>
+  );
+};
+
+const DisplayToggle = connect(
+  displayToggleMapStateToProps,
+  displayToggleMapDispatchToProps
+)(DisplayToggleComponent);
 
 const SortByToggle = () => (
   <div className={styles.toggle}>
@@ -26,7 +54,10 @@ export const MyDeckListHeader = () => {
       <DisplayToggle />
       <SortByToggle />
       <input className={styles.searchbar}></input>
-      <button className={styles.addDeck}>+ Deck</button>
+      <button className={styles.addDeck}>
+        <span style={{position: "relative", top: 0.5, left: -2, fontSize: 30}}>+</span>
+        <div style={{display: "inline-block", padding: "8px 0", }}>&nbsp;Deck</div>
+      </button>
     </div>
   );
 };
@@ -45,7 +76,7 @@ const MyDeckList = () => {
   return (
     <div className={styles.container}>
       {deckList.map((n) => (
-        <DeckItem number={n} />
+        <DeckItem key={n} number={n} />
       ))}
     </div>
   );
