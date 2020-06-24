@@ -3,9 +3,10 @@ import React from "react";
 
 type Props = {
   inverted: boolean,
+  style: any,
 };
 
-class ListIcon<Props> extends React.PureComponent {
+class ListIcon extends React.PureComponent<Props> {
   render() {
     const inverted: boolean = this.props.inverted;
     let props = this.props;

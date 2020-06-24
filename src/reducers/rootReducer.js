@@ -1,8 +1,9 @@
 // @flow
 
 // import {combineReducers} from "redux";
+import type { State } from "types/states";
 
-const initialState = {
+const initialState: State = {
   activeUser: {
     username: "Andreea",
   },
@@ -11,7 +12,6 @@ const initialState = {
     sortBy: "tag",
   },
 };
-
 
 const rootReducer = (state = initialState, action) => {
   switch (action.type) {

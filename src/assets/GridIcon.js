@@ -3,13 +3,14 @@ import React from "react";
 
 type Props = {
   inverted: boolean,
+  style: any,
 };
 
-class GridIcon<Props> extends React.PureComponent {
+class GridIcon extends React.PureComponent<Props> {
   render() {
     const inverted: boolean = this.props.inverted;
     let props = this.props;
-    
+
     if (inverted) {
       props = {
         ...props,
