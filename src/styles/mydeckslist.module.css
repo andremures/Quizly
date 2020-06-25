@@ -27,7 +27,16 @@
 
 .toggle {
   border: 1px solid black;
+  border-radius: 5px;
   height: 40px;
+}
+
+.toggle :first-child {
+  border-radius: 4px 0 0 4px;
+}
+
+.toggle :last-child {
+  border-radius: 0 4px 4px 0;
 }
 
 .toggle svg {

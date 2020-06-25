@@ -1,7 +1,7 @@
 // @flow
 import React from "react";
 import { connect } from "react-redux";
-import SortByAlphaIcon from "assets/SortByAlphaIcon";
+import SortByAlphaIcon from "assets/AlphaIcon";
 import TagIcon from "assets/TagIcon";
 import styles from "styles/mydeckslist.module.css";
 

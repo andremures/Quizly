@@ -1,7 +1,7 @@
 // @flow
 import React from "react";
 
-const SortByAlphaIcon = (props: Object) => {
+const AlphaIcon = (props: Object) => {
   const inverted: boolean = !!props.inverted;
 
   if (inverted) {
@@ -27,4 +27,4 @@ const SortByAlphaIcon = (props: Object) => {
   }
 };
 
-export default SortByAlphaIcon;
+export default AlphaIcon;

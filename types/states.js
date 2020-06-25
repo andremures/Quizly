@@ -9,10 +9,11 @@ type UserState = {
 
 type MyDecksState = {
   display: DisplayType,
-  sortBy: SortByType
+  sortBy: SortByType,
+  filter: string,
 }
 
 export type State = {
   activeUser: UserState,
-  myDecks: MyDecksState
+  myDecks: MyDecksState,
 };

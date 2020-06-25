@@ -1,15 +1,22 @@
 // @flow
 import React from "react";
+import { connect } from "react-redux";
 import DisplayToggle from "components/DisplayToggle";
 import SortByToggle from "components/SortByToggle";
 import styles from "styles/mydeckslist.module.css";
 
-export const MyDeckListHeader = () => {
+import type { State } from "types/states";
+
+const mapStateToProps = (state: State, ownProps: Object) => ({
+  filter: state.myDecks.filter,
+});
+
+const MyDeckListHeaderComponent = ({ filter }) => {
   return (
     <div className={styles.header}>
       <DisplayToggle />
       <SortByToggle />
-      <input className={styles.searchbar}></input>
+      <div className={styles.searchbar}>{filter}</div>
       <button className={styles.addDeck}>
         <span style={{position: "relative", top: 0.5, left: -2, fontSize: 30}}>+</span>
         <div style={{display: "inline-block", padding: "8px 0", }}>&nbsp;Deck</div>
@@ -17,6 +24,8 @@ export const MyDeckListHeader = () => {
     </div>
   );
 };
+
+export const MyDeckListHeader = connect(mapStateToProps)(MyDeckListHeaderComponent);
 
 const DeckItem = ({ number }) => {
   return (

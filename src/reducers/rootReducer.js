@@ -10,6 +10,7 @@ const initialState: State = {
   myDecks: {
     display: "list",
     sortBy: "tag",
+    filter: "default",
   },
 };
 
