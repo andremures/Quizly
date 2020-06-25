@@ -11,7 +11,7 @@ type MyDecksState = {
   display: DisplayType,
   sortBy: SortByType,
   filter: string,
-}
+};
 
 export type State = {
   activeUser: UserState,

@@ -3,6 +3,9 @@ import React from "react";
 import { connect } from "react-redux";
 import ListIcon from "assets/ListIcon";
 import GridIcon from "assets/GridIcon";
+
+import { displayGrid, displayList } from "actions/mydecks";
+
 import styles from "styles/mydeckslist.module.css";
 
 const displayToggleMapStateToProps = (state, ownProps) => ({
@@ -11,10 +14,10 @@ const displayToggleMapStateToProps = (state, ownProps) => ({
 
 const displayToggleMapDispatchToProps = (dispatch) => ({
   displayGrid: () => {
-    dispatch({ type: "DISPLAY_GRID" });
+    dispatch(displayGrid());
   },
   displayList: () => {
-    dispatch({ type: "DISPLAY_LIST" });
+    dispatch(displayList());
   },
 });
 
@@ -24,12 +27,11 @@ const DisplayToggleComponent = (props) => {
   return (
     <div className={styles.toggle}>
       <ListIcon
-        style={{width: 36, padding: 2}}
+        style={{ width: 36, padding: 2 }}
         inverted={displayType === "list"}
-        onClick={props.displayList}/>
-      <GridIcon
-        inverted={displayType === "grid"}
-        onClick={props.displayGrid}/>
+        onClick={props.displayList}
+      />
+      <GridIcon inverted={displayType === "grid"} onClick={props.displayGrid} />
     </div>
   );
 };

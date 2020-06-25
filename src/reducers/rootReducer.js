@@ -2,6 +2,7 @@
 
 // import {combineReducers} from "redux";
 import type { State } from "types/states";
+import type { Action } from "actions";
 
 const initialState: State = {
   activeUser: {
@@ -14,7 +15,7 @@ const initialState: State = {
   },
 };
 
-const rootReducer = (state = initialState, action) => {
+const rootReducer = (state: State = initialState, action: Action): State => {
   switch (action.type) {
     case "DISPLAY_GRID":
       return {
@@ -22,7 +23,7 @@ const rootReducer = (state = initialState, action) => {
         myDecks: {
           ...state.myDecks,
           display: "grid",
-        }
+        },
       };
     case "DISPLAY_LIST":
       return {
@@ -30,27 +31,27 @@ const rootReducer = (state = initialState, action) => {
         myDecks: {
           ...state.myDecks,
           display: "list",
-        }
+        },
       };
     case "SORT_ALPHANUM":
       return {
         ...state,
         myDecks: {
           ...state.myDecks,
-          sortBy: "alphanum"
-        }
+          sortBy: "alphanum",
+        },
       };
     case "SORT_TAG":
       return {
         ...state,
         myDecks: {
           ...state.myDecks,
-          sortBy: "tag"
-        }
+          sortBy: "tag",
+        },
       };
     default:
       return state;
   }
-}
+};
 
 export default rootReducer;

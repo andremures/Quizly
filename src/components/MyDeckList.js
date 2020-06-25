@@ -18,14 +18,22 @@ const MyDeckListHeaderComponent = ({ filter }) => {
       <SortByToggle />
       <div className={styles.searchbar}>{filter}</div>
       <button className={styles.addDeck}>
-        <span style={{position: "relative", top: 0.5, left: -2, fontSize: 30}}>+</span>
-        <div style={{display: "inline-block", padding: "8px 0", }}>&nbsp;Deck</div>
+        <span
+          style={{ position: "relative", top: 0.5, left: -2, fontSize: 30 }}
+        >
+          +
+        </span>
+        <div style={{ display: "inline-block", padding: "8px 0" }}>
+          &nbsp;Deck
+        </div>
       </button>
     </div>
   );
 };
 
-export const MyDeckListHeader = connect(mapStateToProps)(MyDeckListHeaderComponent);
+export const MyDeckListHeader = connect(mapStateToProps)(
+  MyDeckListHeaderComponent
+);
 
 const DeckItem = ({ number }) => {
   return (

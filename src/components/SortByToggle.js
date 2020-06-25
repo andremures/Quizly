@@ -3,6 +3,9 @@ import React from "react";
 import { connect } from "react-redux";
 import SortByAlphaIcon from "assets/AlphaIcon";
 import TagIcon from "assets/TagIcon";
+
+import { sortAlphanum, sortTag } from "actions/mydecks";
+
 import styles from "styles/mydeckslist.module.css";
 
 const sortByToggleMapStateToProps = (state, ownProps) => ({
@@ -11,10 +14,10 @@ const sortByToggleMapStateToProps = (state, ownProps) => ({
 
 const sortByToggleMapDispatchToProps = (dispatch) => ({
   sortByAlphanum: () => {
-    dispatch({ type: "SORT_ALPHANUM" });
+    dispatch(sortAlphanum());
   },
   sortByTag: () => {
-    dispatch({ type: "SORT_TAG" });
+    dispatch(sortTag());
   },
 });
 
@@ -24,18 +27,20 @@ const SortByToggleComponent = (props) => {
     <div className={styles.toggle}>
       <SortByAlphaIcon
         inverted={sortByType === "alphanum"}
-        onClick={props.sortByAlphanum}/>
+        onClick={props.sortByAlphanum}
+      />
       <TagIcon
-        style={{width: 24, padding: 8}}
+        style={{ width: 24, padding: 8 }}
         inverted={sortByType === "tag"}
-          onClick={props.sortByTag}/>
+        onClick={props.sortByTag}
+      />
     </div>
   );
 };
 
 const SortByToggle = connect(
   sortByToggleMapStateToProps,
-  sortByToggleMapDispatchToProps,
+  sortByToggleMapDispatchToProps
 )(SortByToggleComponent);
 
 export default SortByToggle;
